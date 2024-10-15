@@ -7,9 +7,11 @@ def cambio(texto, num):
     cipherText = ''
 
     for letra in texto:
-        index = letras.index(letra)
-
-        print((letras.index(letra) + num) % len(letras))
+        if letra not in letras:
+            cipherText += letra
+        else:
+            index = letras.index(letra)
+            cipherText += letras[(index + num) % len(letras)]
 
     return cipherText
 
